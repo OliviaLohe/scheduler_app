@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_name: MyString
+  course: MyString
+  type: 
+  format: MyString
+  event_date: 2020-06-08
+  start_time: 2020-06-08 14:59:51
+  trainer: MyString
+  num_students: 1
+  requested_by: MyString
+  email: MyText
+
+two:
+  client_name: MyString
+  course: MyString
+  type: 
+  format: MyString
+  event_date: 2020-06-08
+  start_time: 2020-06-08 14:59:51
+  trainer: MyString
+  num_students: 1
+  requested_by: MyString
+  email: MyText

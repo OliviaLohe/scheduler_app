@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client name:</strong>
+  <%= @event.client_name %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @event.class %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @event.type %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @event.format %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @event.start_time %>
+</p>
+
+<p>
+  <strong>Trainer:</strong>
+  <%= @event.trainer %>
+</p>
+
+<p>
+  <strong>Num students:</strong>
+  <%= @event.num_students %>
+</p>
+
+<p>
+  <strong>Requested by:</strong>
+  <%= @event.requested_by %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @event.email %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
