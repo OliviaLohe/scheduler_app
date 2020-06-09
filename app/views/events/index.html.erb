@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Client name</th>
-      <th>Class</th>
-      <th>Type</th>
+      <th>Course</th>
+      <th>Renewal?</th>
       <th>Format</th>
       <th>Date</th>
       <th>Start time</th>
@@ -23,10 +23,10 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.client_name %></td>
-        <td><%= event.class %></td>
-        <td><%= event.type %></td>
+        <td><%= event.course %></td>
+        <td><%= event.renewal %></td>
         <td><%= event.format %></td>
-        <td><%= event.date %></td>
+        <td><%= event.event_date %></td>
         <td><%= event.start_time %></td>
         <td><%= event.trainer %></td>
         <td><%= event.num_students %></td>

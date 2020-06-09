@@ -2,13 +2,49 @@
 
 <%= form_with scope: :event, url: events_path, local: true do |form| %>
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :client_name %><br>
+    <%= form.text_field :client_name %>
   </p>
  
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :course %><br>
+    <%= form.text_area :course %>
+  </p>
+  <p>
+    <%= form.label :renewal %><br>
+    <%= form.text_field :renewal %>
+  </p>
+ 
+  <p>
+    <%= form.label :format %><br>
+    <%= form.text_area :format %>
+  </p>
+  <p>
+    <%= form.label :event_date %><br>
+    <%= form.date_field :event_date %>
+  </p>
+ 
+  <p>
+    <%= form.label :start_time %><br>
+    <%= form.time_field :start_time %>
+  </p>
+  <p>
+    <%= form.label :trainer %><br>
+    <%= form.text_field :trainer %>
+  </p>
+ 
+  <p>
+    <%= form.label :num_students %><br>
+    <%= form.number_field :num_students %>
+  </p>
+  <p>
+    <%= form.label :requested_by %><br>
+    <%= form.text_field :requested_by %>
+  </p>
+ 
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_area :email %>
   </p>
  
   <p>
