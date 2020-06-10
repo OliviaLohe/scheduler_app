@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :course %>
-    <%= form.text_field :course %>
+    <%= form.collection_select :course, Course.all, :id, :name %>
   </div>
 
   <div class="field">
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :start_time %>
-    <%= form.time_select :start_time %>
+    <%= form.time_field :start_time %>
   </div>
 
   <div class="field">

@@ -27,7 +27,7 @@
         <td><%= event.renewal %></td>
         <td><%= event.format %></td>
         <td><%= event.event_date %></td>
-        <td><%= event.start_time %></td>
+        <td><%= event.start_time.strftime("%H:%M") %></td>
         <td><%= event.trainer %></td>
         <td><%= event.num_students %></td>
         <td><%= event.requested_by %></td>

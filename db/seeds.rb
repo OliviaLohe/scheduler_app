@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+courses = Course.create([
+  { name: 'WISHA-WWA', frequency: 365, duration: 120, base_price: 44700 },
+  { name: 'WISHA-EWA', frequency: 365, duration: 120, base_price: 54700 },
+  { name: 'OSHA', frequency: 365, duration: 120, base_price: 54700 },
+  { name: 'HIPAA-OVERVIEW', frequency: 365, duration: 60, base_price: 27700 },
+  { name: 'HIPAA-FULL', frequency: 365, duration: 120, base_price: 44700 },
+  { name: 'BLS-WWA', frequency: 730, duration: 150, base_price: 44700 },
+  { name: 'BLS-EWA', frequency: 730, duration: 150, base_price: 54700 },
+  { name: 'INFECTION CONTROL', frequency: 365, duration: 60, base_price: 27700 },
+])
+
+
