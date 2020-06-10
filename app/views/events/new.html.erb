@@ -12,12 +12,12 @@
   </p>
   <p>
     <%= form.label :renewal %><br>
-    <%= form.select( :renewal, options_for_select(['renewal', 'initial'], 'initial'), {})%>
+    <%= form.select( :renewal, options_for_select(['renewal', 'initial'], 'renewal'), {})%>
   </p>
  
   <p>
     <%= form.label :format %><br>
-    <%= form.text_area :format %>
+    <%= form.select( :format, options_for_select(['live', 'webinar'], 'live'), {})%>
   </p>
   <p>
     <%= form.label :event_date %><br>
@@ -35,7 +35,7 @@
  
   <p>
     <%= form.label :num_students %><br>
-    <%= form.number_field :num_students %>
+    <%= form.select( :num_students, options_for_select(0..100), {}) %>
   </p>
   <p>
     <%= form.label :requested_by %><br>
