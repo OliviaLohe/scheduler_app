@@ -30,7 +30,7 @@
   </p>
   <p>
     <%= form.label :trainer %><br>
-    <%= form.text_field :trainer_id %>
+    <%= form.collection_select :trainer_id, Trainer.all, :id, :name  %>
   </p>
  
   <p>

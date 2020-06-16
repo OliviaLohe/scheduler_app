@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: scheduler_app_production
-  username: scheduler_app
-  password: <%= ENV['SCHEDULER_APP_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABSE_URL'] %>
+  # username: scheduler_app
+ #  password: <%= ENV['SCHEDULER_APP_DATABASE_PASSWORD'] %>

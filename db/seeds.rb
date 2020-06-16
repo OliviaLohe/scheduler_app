@@ -17,4 +17,15 @@ courses = Course.create([
   { name: 'INFECTION CONTROL', frequency: 365, duration: 60, base_price: 27700 },
 ])
 
+trainers = Trainer.create([
+  { name: 'Trainer 1', course_id: 1 },
+  { name: 'Trainer 1', course_id: 3 },
+  { name: 'Trainer 2', course_id: 2 },
+  { name: 'Trainer 2', course_id: 4 },
+  { name: 'Trainer 2', course_id: 5 },
+  { name: 'Trainer 3', course_id: 1 },
+  { name: 'Trainer 3', course_id: 3 },
+  { name: 'Trainer 3', course_id: 4 }
+])
+
 
