@@ -18,14 +18,15 @@ courses = Course.create([
 ])
 
 trainers = Trainer.create([
-  { name: 'Trainer 1', course_id: 1 },
-  { name: 'Trainer 1', course_id: 3 },
-  { name: 'Trainer 2', course_id: 2 },
-  { name: 'Trainer 2', course_id: 4 },
-  { name: 'Trainer 2', course_id: 5 },
-  { name: 'Trainer 3', course_id: 1 },
-  { name: 'Trainer 3', course_id: 3 },
-  { name: 'Trainer 3', course_id: 4 }
+  { name: 'Trainer 1', course_id: Course.where(name: 'WISHA-WWA').pick(:id)},
+  { name: 'Trainer 1', course_id: Course.where(name: 'WISHA-EWA').pick(:id) },
+  { name: 'Trainer 2', course_id: Course.where(name: 'WISHA-WWA').pick(:id) },
+  { name: 'Trainer 2', course_id: Course.where(name: 'WISHA-EWA').pick(:id) },
+  { name: 'Trainer 2', course_id: Course.where(name: 'INFECTION CONTROL').pick(:id) },
+  { name: 'Trainer 3', course_id: Course.where(name: 'HIPAA-OVERVIEW').pick(:id) },
+  { name: 'Trainer 3', course_id: Course.where(name: 'HIPAA-FULL').pick(:id) },
+  { name: 'Trainer 3', course_id: Course.where(name: 'WISHA-WWA').pick(:id) }
 ])
+
 
 
