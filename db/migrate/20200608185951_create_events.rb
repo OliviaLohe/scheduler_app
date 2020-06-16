@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :format
       t.date :event_date
       t.time :start_time
-      t.string :trainer
+      t.string :trainer_id
       t.integer :num_students
       t.string :requested_by
       t.text :email
