@@ -19,14 +19,10 @@
     <%= form.label :format %><br>
     <%= form.select( :format, options_for_select(['live', 'webinar'], 'live'), {})%>
   </p>
-  <p>
-    <%= form.label :event_date %><br>
-    <%= form.date_field :event_date %>
-  </p>
- 
+
   <p>
     <%= form.label :start_time %><br>
-    <%= form.time_field :start_time %>
+    <%= form.datetime_field :start_time, :ampm => true, :minute_step => 15 %>
   </p>
   <p>
     <%= form.label :trainer %><br>

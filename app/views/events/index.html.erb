@@ -9,7 +9,6 @@
       <th>Course</th>
       <th>Renewal?</th>
       <th>Format</th>
-      <th>Date</th>
       <th>Start time</th>
       <th>Trainer</th>
       <th>Num students</th>
@@ -26,8 +25,7 @@
         <td><%= event.course %></td>
         <td><%= event.renewal %></td>
         <td><%= event.format %></td>
-        <td><%= event.event_date %></td>
-        <td><%= event.start_time.strftime("%H:%M") %></td>
+        <td><%= event.start_time %></td>
         <td><%= event.trainer_id %></td>
         <td><%= event.num_students %></td>
         <td><%= event.requested_by %></td>
@@ -43,3 +41,4 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+
