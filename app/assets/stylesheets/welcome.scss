@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.calendar-heading {
+     text-align: center;
+  }
+
+.calendar-title {
+  font-size: medium;
+}
+
 .simple-calendar {
   table {
     -webkit-border-horizontal-spacing: 0px;
