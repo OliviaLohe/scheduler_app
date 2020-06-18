@@ -1,17 +1,14 @@
 <head>
 	<h1>Harris Biomedical Scheduling Software</h1>
+	<%= stylesheet_link_tag "welcome" %>
 </head>
 
 <body>
-  <div class="py-10 lg:py-20 px-4 border-b border-grey-light mb-4 text-indigo-darker">
-    <div class="container m-auto text-center">
-      <%= link_to "Schedule a new event", new_event_path, class:"btn btn-primary my-3" %>
-    </div>
-  </div>
   <h2> Calendar </h2>
-  <div id="simple-calendar">
-	<%= month_calendar  do |date| %>
-  		<%= date %>
-	<% end %>
-  </div>	
+  <%= month_calendar  do |date| %>
+      <%= date.day %>
+  <% end %>
+  <br></br>
+  <%= link_to "Schedule a new event", new_event_path, class:"btn btn-primary my-3" %>
+  
 </body>
