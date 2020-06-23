@@ -5,8 +5,14 @@
 
 <body>
   <h2> Calendar </h2>
-  <%= month_calendar  do |date| %>
+  <%= month_calendar events: @events do |date, events | %>
       <%= date.day %>
+      <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
+      	<div>
+      	  <%= event.client_name %>
+          <%= event.start_time.strftime("%l:%M") %>
+        </div>
+      <% end %>
   <% end %>
   <br></br>
   <%= link_to "Schedule a new event", new_event_path, class:"btn btn-primary my-3" %>

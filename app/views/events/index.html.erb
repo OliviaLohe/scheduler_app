@@ -25,7 +25,7 @@
         <td><%= event.course %></td>
         <td><%= event.renewal %></td>
         <td><%= event.format %></td>
-        <td><%= event.start_time %></td>
+        <td><%= event.start_time.strftime("%m/%d/%Y, %l:%M%p") %></td>
         <td><%= event.trainer_id %></td>
         <td><%= event.num_students %></td>
         <td><%= event.requested_by %></td>
