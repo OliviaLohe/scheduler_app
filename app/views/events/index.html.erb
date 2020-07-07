@@ -22,7 +22,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.client_name %></td>
-        <td><%= event.course %></td>
+        <td><%= event.course_ids %></td>
         <td><%= event.renewal %></td>
         <td><%= event.format %></td>
         <td><%= event.start_time.strftime("%m/%d/%Y, %l:%M%p") %></td>

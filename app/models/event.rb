@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
-	belongs_to :client
-	belongs_to :trainer
+	has_many :event_courses
+	has_many :courses, through: :event_courses
+
 end

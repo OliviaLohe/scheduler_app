@@ -6,27 +6,39 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-courses = Course.create([
-  { name: 'WISHA-WWA', frequency: 365, duration: 120, base_price: 44700 },
-  { name: 'WISHA-EWA', frequency: 365, duration: 120, base_price: 54700 },
-  { name: 'OSHA', frequency: 365, duration: 120, base_price: 54700 },
-  { name: 'HIPAA-OVERVIEW', frequency: 365, duration: 60, base_price: 27700 },
-  { name: 'HIPAA-FULL', frequency: 365, duration: 120, base_price: 44700 },
-  { name: 'BLS-WWA', frequency: 730, duration: 150, base_price: 44700 },
-  { name: 'BLS-EWA', frequency: 730, duration: 150, base_price: 54700 },
-  { name: 'INFECTION CONTROL', frequency: 365, duration: 60, base_price: 27700 },
+
+trainer1 = Trainer.where(name: 'Trainer 1')
+trainer2 = Trainer.where(name: 'Trainer 2')
+trainers3 = Trainer.where(name: 'Trainer 3')
+
+course1 = Course.where(name: 'WISHA-WWA')
+course2 = Course.where(name: 'WISHA-EWA')
+course3 = Course.where(name: 'OSHA')
+course4 = Course.where(name: 'HIPAA_OVERVIEW')
+course5 = Course.where(name: 'HIPAA_FULL')
+course6 = Course.where(name: 'BLS_WWA')
+course7 = Course.where(name: 'BLS-EWA')
+course8 = Course.where(name: 'INFECTION CONTROL')
+
+
+courses_trainers = Course_Trainer.create([
+  { course_id: course1, trainer_id: trainer1},
+  { course_id: course2, trainer_id: trainer1},
+  { course_id: course3, trainer_id: trainer1},
+  { course_id: course4, trainer_id: trainer1},
+  { course_id: course5, trainer_id: trainer1},
+  { course_id: course6, trainer_id: trainer1},
+  { course_id: course7, trainer_id: trainer1},
+  { course_id: course8, trainer_id: trainer1},
+  { course_id: course1, trainer_id: trainer2},
+  { course_id: course2, trainer_id: trainer2},
+  { course_id: course5, trainer_id: trainer2},
+  { course_id: course1, trainer_id: trainer3},
+  { course_id: course3, trainer_id: trainer3},
+  { course_id: course4, trainer_id: trainer3},
 ])
 
-trainers = Trainer.create([
-  { name: 'Trainer 1', course_id: Course.where(name: 'WISHA-WWA').pick(:id)},
-  { name: 'Trainer 1', course_id: Course.where(name: 'WISHA-EWA').pick(:id) },
-  { name: 'Trainer 2', course_id: Course.where(name: 'WISHA-WWA').pick(:id) },
-  { name: 'Trainer 2', course_id: Course.where(name: 'WISHA-EWA').pick(:id) },
-  { name: 'Trainer 2', course_id: Course.where(name: 'INFECTION CONTROL').pick(:id) },
-  { name: 'Trainer 3', course_id: Course.where(name: 'HIPAA-OVERVIEW').pick(:id) },
-  { name: 'Trainer 3', course_id: Course.where(name: 'HIPAA-FULL').pick(:id) },
-  { name: 'Trainer 3', course_id: Course.where(name: 'WISHA-WWA').pick(:id) }
-])
+# course_id: Course.where(name: 'WISHA-EWA').pick(:id) },
 
 
 
