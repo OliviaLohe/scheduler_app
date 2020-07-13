@@ -5,11 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+trainers = Trainer.create([
+{name: 'Trainer 1'},
+{name: 'Trainer 2'},
+{name: 'Trainer 3'}
+])
 
 trainer1 = Trainer.where(name: 'Trainer 1')
 trainer2 = Trainer.where(name: 'Trainer 2')
-trainers3 = Trainer.where(name: 'Trainer 3')
+trainer3 = Trainer.where(name: 'Trainer 3')
 
 course1 = Course.where(name: 'WISHA-WWA')
 course2 = Course.where(name: 'WISHA-EWA')
@@ -35,7 +39,7 @@ courses_trainers = Course_Trainer.create([
   { course_id: course5, trainer_id: trainer2},
   { course_id: course1, trainer_id: trainer3},
   { course_id: course3, trainer_id: trainer3},
-  { course_id: course4, trainer_id: trainer3},
+  { course_id: course4, trainer_id: trainer3}
 ])
 
 # course_id: Course.where(name: 'WISHA-EWA').pick(:id) },
