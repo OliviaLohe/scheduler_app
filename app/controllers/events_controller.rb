@@ -10,6 +10,10 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @course_ids = @event.course_ids
+    @course_names = Course.find(@course_ids)
+    @trainer_id = @event.trainer_id
+    @trainer_name = Trainer.find(@trainer_id)
   end
 
   # GET /events/new

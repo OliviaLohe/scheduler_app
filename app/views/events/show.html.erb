@@ -7,7 +7,9 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @event.course_ids %>
+  <% @course_names.each do |c| %>
+    <%= c.name %>
+  <% end %>
 </p>
 
 <p>
@@ -27,7 +29,7 @@
 
 <p>
   <strong>Trainer:</strong>
-  <%= @event.trainer_id %>
+  <%= @trainer_name.name %>
 </p>
 
 <p>
