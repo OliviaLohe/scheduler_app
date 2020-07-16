@@ -5,12 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-trainers = Trainer.create([
-{name: 'Trainer 1'},
-{name: 'Trainer 2'},
-{name: 'Trainer 3'}
-])
-
 trainer1 = Trainer.where(name: 'Trainer 1')
 trainer2 = Trainer.where(name: 'Trainer 2')
 trainer3 = Trainer.where(name: 'Trainer 3')
@@ -25,7 +19,7 @@ course7 = Course.where(name: 'BLS-EWA')
 course8 = Course.where(name: 'INFECTION CONTROL')
 
 
-courses_trainers = Course_Trainer.create([
+course_trainers = CourseTrainer.create([
   { course_id: course1, trainer_id: trainer1},
   { course_id: course2, trainer_id: trainer1},
   { course_id: course3, trainer_id: trainer1},

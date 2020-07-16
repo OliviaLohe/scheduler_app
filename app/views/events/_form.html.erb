@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :renewal? %>
-    <%= form.select( :renewal, options_for_select(['renewal', 'initial'], 'renewal'), {}) %>
+    <%= form.select( :renewal, options_for_select(['renewal', 'initial'], @event.renewal), {}) %>
   </div>
 
   <div class="field">
     <%= form.label :format %>
-    <%= form.select( :format, options_for_select(['live', 'webinar'], 'live'), {}) %>
+    <%= form.select( :format, options_for_select(['live', 'webinar'], @event.format), {}) %>
   </div>
 
   <div class="field">
@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :num_students %>
-    <%= form.select( :num_students, options_for_select(0..100), {}) %>
+    <%= form.select( :num_students, options_for_select(0..100, @event.num_students)) %>
   </div>
 
   <div class="field">
