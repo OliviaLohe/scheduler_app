@@ -1,49 +1,79 @@
-<h1>New Event</h1>
+<head>
+  <h1>New Event</h1>
+  <%= stylesheet_link_tag "events" %>
+</head>
 
-<%= form_with scope: :event, url: events_path, local: true do |form| %>
-  <p>
-    <%= form.label :client_name %><br>
-    <%= form.text_field :client_name %>
-  </p>
- 
-  <p>
-    <%= form.label :course %><br>
-    <%= form.collection_select :course_ids, Course.all, :id, :name, {}, {:multiple => true} %>
-  </p>
-  <p>
-    <%= form.label :renewal %><br>
-    <%= form.select( :renewal, options_for_select(['renewal', 'initial'], 'renewal'), {})%>
-  </p>
- 
-  <p>
-    <%= form.label :format %><br>
-    <%= form.select( :format, options_for_select(['live', 'webinar'], 'live'), {})%>
-  </p>
+<body>
 
-  <p>
-    <%= form.label :start_time %><br>
-    <%= form.datetime_field :start_time, :ampm => true, :minute_step => 15 %>
-  </p>
-  <p>
-    <%= form.label :trainer %><br>
-    <%= form.collection_select :trainer_id, Trainer.all, :id, :name  %>
-  </p>
+  <div style="float: left; width: 20%">
+
+  <%= form_with scope: :event, url: events_path, local: true do |form| %>
+    <p>
+      <%= form.label :client_name %><br>
+      <%= form.text_field :client_name %>
+    </p>
  
-  <p>
-    <%= form.label :num_students %><br>
-    <%= form.select( :num_students, options_for_select(0..100), {}) %>
-  </p>
-  <p>
-    <%= form.label :requested_by %><br>
-    <%= form.text_field :requested_by %>
-  </p>
+    <p>
+      <%= form.label :course %><br>
+      <%= form.collection_select :course_ids, Course.all, :id, :name, {}%>
+    </p>
+    <p>
+      <%= form.label :renewal %><br>
+      <%= form.select( :renewal, options_for_select(['renewal', 'initial'], 'renewal'), {})%>
+    </p>
  
-  <p>
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>
-  </p>
+    <p>
+      <%= form.label :format %><br>
+      <%= form.select( :format, options_for_select(['live', 'webinar'], 'live'), {})%>
+    </p>
+
+    <p>
+      <%= form.label :start_time %><br>
+      <%= form.datetime_field :start_time, :ampm => true, :minute_step => 15 %>
+    </p>
+    <p>
+      <%= form.label :trainer %><br>
+      <%= form.collection_select :trainer_id, Trainer.all, :id, :name  %>
+    </p>
  
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+    <p>
+      <%= form.label :num_students %><br>
+      <%= form.select( :num_students, options_for_select(0..100), {}) %>
+    </p>
+    <p>
+      <%= form.label :requested_by %><br>
+      <%= form.text_field :requested_by %>
+    </p>
+ 
+    <p>
+      <%= form.label :email %><br>
+      <%= form.text_field :email %>
+    </p>
+ 
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+  </div>
+  <%= month_calendar events: @events do |date, events | %>
+    <%= date.day %>
+    <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
+      <div>
+        <%= event.client_name %>
+        <%= event.start_time.strftime("%l:%M") %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= month_calendar events: @events do |date, events | %>
+    <%= date.day %>
+    <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
+      <div>
+        <%= event.client_name %>
+        <%= event.start_time.strftime("%l:%M") %>
+      </div>
+    <% end %>
+  <% end %>
+  
+</body>
+
+
