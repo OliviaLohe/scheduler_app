@@ -5,12 +5,12 @@
 
 <body>
 
-  <div style="float: left; width: 20%">
+  <div style="float: left; width: 25%">
 
   <%= form_with scope: :event, url: events_path, local: true do |form| %>
     <p>
       <%= form.label :client_name %><br>
-      <%= form.text_field :client_name %>
+      <%= form.collection_select :client_name, Client.all, :id, :name %>
     </p>
  
     <p>

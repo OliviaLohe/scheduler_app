@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'clients/index'
+  post 'clients/import'
   resources :events
   get 'welcome/index'
 
