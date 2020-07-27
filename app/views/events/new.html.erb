@@ -47,7 +47,7 @@
  
     <p>
       <%= form.label :email %><br>
-      <%= form.text_field :email %>
+      <%= form.text_field :email, value: @clients.where(name: params[:client_name])%>
     </p>
  
     <p>
@@ -55,7 +55,7 @@
     </p>
   <% end %>
   </div>
-  <%= month_calendar events: @events do |date, events | %>
+  <%= month_calendar start_date: Date.today.beginning_of_month.next_month, events: @events do |date, events| %>
     <%= date.day %>
     <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
       <div>
@@ -64,7 +64,7 @@
       </div>
     <% end %>
   <% end %>
-  <%= month_calendar events: @events do |date, events | %>
+  <%= month_calendar events: @events do |date, events| %>
     <%= date.day %>
     <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
       <div>

@@ -21,12 +21,12 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.client_name %></td>
+        <td><%= Client.find(event.client_name).name %></td>
         <td><%= event.course_ids %></td>
         <td><%= event.renewal %></td>
         <td><%= event.format %></td>
         <td><%= event.start_time.strftime("%m/%d/%Y, %l:%M%p") %></td>
-        <td><%= event.trainer_id %></td>
+        <td><%= Trainer.find(event.trainer_id).name %></td>
         <td><%= event.num_students %></td>
         <td><%= event.requested_by %></td>
         <td><%= event.email %></td>

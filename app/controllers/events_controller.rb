@@ -14,12 +14,19 @@ class EventsController < ApplicationController
     @course_names = Course.find(@course_ids)
     @trainer_id = @event.trainer_id
     @trainer_name = Trainer.find(@trainer_id)
+
+    @client_id = @event.client_name
+    @client = Client.find(@client_id)
   end
 
   # GET /events/new
   def new
     @event = Event.new
     @events = Event.all
+    @clients = Client.all
+
+
+    @next_month = Date.current.next_month
   end
 
   # GET /events/1/edit

@@ -5,6 +5,8 @@ class Client < ApplicationRecord
 	has_many :courses, through: :events
 
 	def self.import(file)
+		Client.delete_all
+
 		CSV.foreach(file.path, headers: true) do |row|
 			Client.create({
 				name: row[2],
