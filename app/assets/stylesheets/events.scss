@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// the styling from the simple-calendar gem has been added here because it was not being applied 
+// from application.scss
+
 .calendar-heading {
      text-align: center;
   }
@@ -13,7 +16,7 @@
 
 .simple-calendar {
   width: 35%;
-  float: right;
+  float: left;
 
   table {
     -webkit-border-horizontal-spacing: 0px;

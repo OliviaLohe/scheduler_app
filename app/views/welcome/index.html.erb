@@ -9,7 +9,7 @@
       <%= date.day %>
       <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
       	<div>
-      	  <%= event.client_name %>
+      	  <%= Client.find(event.client_name).name %>
           <%= event.start_time.strftime("%l:%M") %>
         </div>
       <% end %>

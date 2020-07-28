@@ -10,6 +10,9 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+
+    # these variables are used to get the names of courses, clients, and trainers
+    # because only their IDS are being stored in the Event table
     @course_ids = @event.course_ids
     @course_names = Course.find(@course_ids)
     @trainer_id = @event.trainer_id
@@ -21,12 +24,19 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+
+    # these variables are used to get the names of clients because only their IDS are being stored in the Event table
     @event = Event.new
     @events = Event.all
     @clients = Client.all
 
-
-    @next_month = Date.current.next_month
+    # these variables are used to display the current and next month on the rwo
+    # calendars on the 'New Event' page (events/new.erb)
+    # BECAUSE OF THESE VARIABLES, THE 'NEXT' AND 'PREVIOUS' LINKS ON THE CALENDARS
+    # ON THE NEW EVENT PAGE DO NOT WORK PROPERLY
+    @current_date = Date.today.beginning_of_month
+    @start_date = @current_date
+    @next_month = @start_date.next_month
   end
 
   # GET /events/1/edit
@@ -66,7 +76,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    
+
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }

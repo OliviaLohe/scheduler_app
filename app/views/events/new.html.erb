@@ -55,24 +55,25 @@
     </p>
   <% end %>
   </div>
-  <%= month_calendar start_date: Date.today.beginning_of_month.next_month, events: @events do |date, events| %>
+    <%= month_calendar start_date: @start_date, events: @events do |date, events| %>
     <%= date.day %>
     <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
       <div>
-        <%= event.client_name %>
+        <%= Client.find(event.client_name).name %>
         <%= event.start_time.strftime("%l:%M") %>
       </div>
     <% end %>
   <% end %>
-  <%= month_calendar events: @events do |date, events| %>
+  <%= month_calendar start_date: @next_month, events: @events do |date, events| %>
     <%= date.day %>
     <% @events.select{ |m| m.start_time.to_date == date }.each do |event| %>
       <div>
-        <%= event.client_name %>
+        <%= Client.find(event.client_name).name %>
         <%= event.start_time.strftime("%l:%M") %>
       </div>
     <% end %>
   <% end %>
+
   
 </body>
 

@@ -5,38 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-trainer1 = Trainer.where(name: 'Trainer 1')
-trainer2 = Trainer.where(name: 'Trainer 2')
-trainer3 = Trainer.where(name: 'Trainer 3')
 
-course1 = Course.where(name: 'WISHA-WWA')
-course2 = Course.where(name: 'WISHA-EWA')
-course3 = Course.where(name: 'OSHA')
-course4 = Course.where(name: 'HIPAA_OVERVIEW')
-course5 = Course.where(name: 'HIPAA_FULL')
-course6 = Course.where(name: 'BLS_WWA')
-course7 = Course.where(name: 'BLS-EWA')
-course8 = Course.where(name: 'INFECTION CONTROL')
+# This file currently only contains default course data. Client  records will be added inot the database via the upload 
+# function in clients/index.erb, and events will be added via events/new.erb. Trainer data will need to
+# be added manually, or a file upload will need to be added.
+# Additionally, the associations between trainers and courses will need to be added manually, once trainers are added,
+# or that functionality will need to be build into a trainer data file upload function.
 
-
-course_trainers = CourseTrainer.create([
-  { course_id: course1, trainer_id: trainer1},
-  { course_id: course2, trainer_id: trainer1},
-  { course_id: course3, trainer_id: trainer1},
-  { course_id: course4, trainer_id: trainer1},
-  { course_id: course5, trainer_id: trainer1},
-  { course_id: course6, trainer_id: trainer1},
-  { course_id: course7, trainer_id: trainer1},
-  { course_id: course8, trainer_id: trainer1},
-  { course_id: course1, trainer_id: trainer2},
-  { course_id: course2, trainer_id: trainer2},
-  { course_id: course5, trainer_id: trainer2},
-  { course_id: course1, trainer_id: trainer3},
-  { course_id: course3, trainer_id: trainer3},
-  { course_id: course4, trainer_id: trainer3}
+courses = Course.create([
+  { name: 'WISHA-WWA', frequency: 365, duration: 120, base_price: 44700 },
+  { name: 'WISHA-EWA', frequency: 365, duration: 120, base_price: 54700 },
+  { name: 'OSHA', frequency: 365, duration: 120, base_price: 54700 },
+  { name: 'HIPAA-OVERVIEW', frequency: 365, duration: 60, base_price: 27700 },
+  { name: 'HIPAA-FULL', frequency: 365, duration: 120, base_price: 44700 },
+  { name: 'BLS-WWA', frequency: 730, duration: 150, base_price: 44700 },
+  { name: 'BLS-EWA', frequency: 730, duration: 150, base_price: 54700 },
+  { name: 'INFECTION CONTROL', frequency: 365, duration: 60, base_price: 27700 }
 ])
 
-# course_id: Course.where(name: 'WISHA-EWA').pick(:id) },
 
 
 
